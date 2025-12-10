@@ -12,6 +12,6 @@ timestamp=$(date +"%Y-%m-%d %H:%M:%S")
 git commit -m "Auto-commit: $timestamp"
 
 # Push to remote (uncomment the next line if you want to auto-push)
-# git push origin main
+git push origin master
 
 echo "Changes committed successfully!"

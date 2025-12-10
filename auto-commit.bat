@@ -12,7 +12,7 @@ REM Commit with timestamp
 git commit -m "Auto-commit: %timestamp%"
 
 REM Push to remote (uncomment the next line if you want to auto-push)
-REM git push origin main
+git push origin master
 
 echo Changes committed successfully!
 pause

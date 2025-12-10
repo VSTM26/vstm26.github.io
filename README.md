@@ -62,6 +62,10 @@ npm run deploy
 - Canvas API (Particle effects)
 - SVG Animations
 
+## GitHub Repository
+
+This project is hosted at: https://github.com/VSTM26/vstm26.github.io
+
 ## Development
 
 To run the website locally, simply open `index.html` in your browser.

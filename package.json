@@ -4,7 +4,7 @@
   "description": "Teja Mathukumalli's personal portfolio website",
   "scripts": {
     "commit": "git add . && git commit -m \"Auto-commit: $(date +'%Y-%m-%d %H:%M:%S')\"",
-    "push": "npm run commit && git push origin main",
+    "push": "npm run commit && git push origin master",
     "deploy": "npm run push"
   },
   "repository": {

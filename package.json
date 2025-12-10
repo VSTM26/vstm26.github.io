@@ -1,0 +1,21 @@
+{
+  "name": "teja-portfolio",
+  "version": "1.0.0",
+  "description": "Teja Mathukumalli's personal portfolio website",
+  "scripts": {
+    "commit": "git add . && git commit -m \"Auto-commit: $(date +'%Y-%m-%d %H:%M:%S')\"",
+    "push": "npm run commit && git push origin main",
+    "deploy": "npm run push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/teja.github.io.git"
+  },
+  "keywords": [
+    "portfolio",
+    "personal-website",
+    "web-development"
+  ],
+  "author": "Teja Mathukumalli",
+  "license": "MIT"
+}

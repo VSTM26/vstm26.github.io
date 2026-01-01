@@ -560,6 +560,20 @@ section p {
 .project-links {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-link {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    background: #667eea;
+    color: white;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
 }
 
 .project-link {

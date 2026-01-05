@@ -1,0 +1,3 @@
+- [x] Find LinkedIn link in contact section
+- [x] Update LinkedIn link to point to https://www.linkedin.com/in/teja-mathukumalli
+- [x] Test the changes to ensure the link works correctly

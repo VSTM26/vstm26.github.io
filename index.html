@@ -113,10 +113,79 @@
                         <p>Founding academic clubs, volunteering at school events, and leading community initiatives</p>
                     </div>
                 </div>
-
+                
+                <button class="learn-more-btn" id="learnMoreBtn">Learn More About Me</button>
 
             </div>
         </section>
+        
+        <!-- LEARN MORE MODAL -->
+        <div class="modal" id="learnMoreModal">
+            <div class="modal-content">
+                <button class="modal-close" id="closeModal">&times;</button>
+                
+                <div class="modal-header">
+                    <h2>Discover My Journey</h2>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="modal-description">
+                        <h3>Who I Am</h3>
+                        <p>I'm Teja Mathukumalli, a tech innovator and builder with a passion for creating solutions that bridge the gap between artificial intelligence, software engineering, and hardware design. My career is driven by the belief that the most impactful innovations come from hands-on experimentation and relentless curiosity.</p>
+                        
+                        <h3>My Philosophy</h3>
+                        <p>I don't just theorize about technology—I build it. Every project in my portfolio represents countless hours of learning, testing, and refining. I believe that great engineering doesn't require unlimited resources; it requires vision, persistence, and a willingness to fail fast and iterate.</p>
+                        
+                        <h3>What I Bring to the Table</h3>
+                        <ul>
+                            <li><strong>Full-Stack Engineering:</strong> From circuit design to cloud architecture, I understand the complete picture</li>
+                            <li><strong>AI & Machine Learning:</strong> Practical implementation of ML models, computer vision, and intelligent automation</li>
+                            <li><strong>Hardware Expertise:</strong> Thermal systems, IoT devices, sensor integration, and embedded systems</li>
+                            <li><strong>Innovation Mindset:</strong> I thrive on solving complex problems with creative, efficient solutions</li>
+                            <li><strong>Cross-Disciplinary Knowledge:</strong> Materials science, chemistry, software architecture, and business acumen</li>
+                        </ul>
+                        
+                        <h3>Beyond the Code</h3>
+                        <p>I'm passionate about community building and knowledge sharing. I've founded academic clubs, mentored students, and actively contribute to the tech community. I believe in lifting others up while pushing myself to new heights.</p>
+                    </div>
+                    
+                    <div class="modal-gallery">
+                        <h3>Featured Work</h3>
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="TejaMathukumalliPictureLinkedIn.jpg" alt="Professional Photo">
+                                <p>Teja Mathukumalli</p>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-placeholder">🔬</div>
+                                <p>Research & Innovation</p>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-placeholder">💻</div>
+                                <p>Software Development</p>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-placeholder">⚙️</div>
+                                <p>Hardware Engineering</p>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-placeholder">🤖</div>
+                                <p>AI & ML Projects</p>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-placeholder">🏆</div>
+                                <p>Achievements</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <a href="#projects" class="modal-button primary">View My Projects</a>
+                    <a href="#contact" class="modal-button secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
         
         <!-- PROJECTS SECTION -->
         <section id="projects">
@@ -143,9 +212,9 @@
                         <span class="tech-tag">Chemistry</span>
                         <span class="tech-tag">Corrosion Prevention</span>
                     </div>
-                <div class="project-links">
-                        <a href="#" class="project-link">Contact for Information</a>
-                    </div>
+<div class="project-links">
+    <a href="#contact" class="project-link">Contact for Information</a>
+</div>
                 </div>
 
                 <!-- SOFTWARE PROJECTS -->
@@ -161,31 +230,38 @@
                         <span class="tech-tag">Full-Stack</span>
                         <span class="tech-tag">Education</span>
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">GitHub</a>
-                        <a href="#" class="project-link">Download</a>
-                    </div>
+<div class="project-links">
+    <a href="https://github.com/BixbySpartanHub/BixbySpartanHub.github.io" class="project-link" target="_blank">GitHub</a>
+    <a href="https://apps.apple.com/ca/app/spartan-hub/id6754216920" class="project-link" target="_blank">Download</a>
+</div>
                 </div>
 
-                <div class="project-card" data-category="software">
-                    <div class="project-header">
-                        <h3>AI Restaurant Discovery App</h3>
-                        <span class="project-type">Software</span>
-                    </div>
-                    <div class="project-image-placeholder">
-                        <div class="project-logo">🍽️</div>
-                    </div>
-                    <p>AI-driven mobile app featuring restaurant discovery, personalized recommendations, and in-app purchase integration.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">AI/ML</span>
-                        <span class="tech-tag">Mobile App</span>
-                        <span class="tech-tag">Personalization</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">GitHub</a>
-                        <a href="#" class="project-link">Download</a>
-                    </div>
-                </div>
+<div class="project-card" data-category="software">
+    <div class="project-header">
+        <h3>AI Restaurant Discovery App</h3>
+        <span class="project-type">Software</span>
+    </div>
+    <div class="project-image-placeholder greenbites-placeholder">
+        <div class="project-logo">🍽️</div>
+        <div class="greenbites-ai-badge">AI POWERED</div>
+        <div class="greenbites-content">
+            <h4>Greenbites</h4>
+            <p>Discover restaurants with AI-powered recommendations</p>
+        </div>
+    </div>
+    <p>AI-driven mobile app featuring restaurant discovery, personalized recommendations, and in-app purchase integration. Greenbites uses advanced machine learning to suggest dining options based on your preferences and location.</p>
+    <div class="tech-tags">
+        <span class="tech-tag">AI/ML</span>
+        <span class="tech-tag">Mobile App</span>
+        <span class="tech-tag">Personalization</span>
+        <span class="tech-tag">Restaurant Discovery</span>
+        <span class="tech-tag">iOS</span>
+    </div>
+<div class="project-links">
+    <a href="#" class="project-link greenbites-learn" id="greenbites-learn-btn">Learn More</a>
+    <a href="https://apps.apple.com/us/app/greenbites/id6755367981" class="project-link greenbites-download" target="_blank">Download on App Store</a>
+</div>
+</div>
 
                 <!-- HARDWARE PROJECTS -->
                 <div class="project-card" data-category="hardware">
@@ -464,7 +540,7 @@
                     </div>
                 </a>
 
-                <a href="https://linkedin.com" target="_blank" class="contact-button">
+                <a href="https://www.linkedin.com/in/teja-mathukumalli" target="_blank" class="contact-button">
                     <span class="contact-icon">🔗</span>
                     <div>
                         <h4>LinkedIn</h4>
@@ -479,11 +555,80 @@
         </section>
     </div>
     
+    <!-- Greenbites Modal -->
+    <div id="greenbites-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>Greenbites - AI Restaurant Discovery</h2>
+                <div class="modal-subtitle">Revolutionizing Dining with Artificial Intelligence</div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-gallery">
+                    <div class="gallery-main">
+                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23f5f5f5'/><rect x='20' y='20' width='360' height='210' rx='10' fill='white' stroke='%23e0e0e0' stroke-width='2'/><text x='200' y='50' text-anchor='middle' font-size='18' font-weight='bold' fill='%23333'>Greenbites App Interface</text><rect x='40' y='80' width='320' height='150' rx='5' fill='%23f0f0f0'/><text x='200' y='120' text-anchor='middle' font-size='14' fill='%23666'>Restaurant Recommendations</text><text x='200' y='140' text-anchor='middle' font-size='12' fill='%23999'>AI-Powered Suggestions</text></svg>" alt="Greenbites App Interface" class="app-screenshot">
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 70'><rect width='100' height='70' rx='5' fill='%234CAF50'/><text x='50' y='35' text-anchor='middle' font-size='10' fill='white'>Feature 1</text></svg>" alt="Feature 1" class="thumbnail active">
+                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 70'><rect width='100' height='70' rx='5' fill='%232E7D32'/><text x='50' y='35' text-anchor='middle' font-size='10' fill='white'>Feature 2</text></svg>" alt="Feature 2" class="thumbnail">
+                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 70'><rect width='100' height='70' rx='5' fill='%238BC34A'/><text x='50' y='35' text-anchor='middle' font-size='10' fill='white'>Feature 3</text></svg>" alt="Feature 3" class="thumbnail">
+                    </div>
+                </div>
+                <div class="modal-description">
+                    <h3>About Greenbites</h3>
+                    <p>Greenbites is an innovative AI-powered restaurant discovery app that transforms how you find and experience dining. Using cutting-edge machine learning algorithms, Greenbites analyzes your personal preferences, dietary restrictions, location, and dining history to provide hyper-personalized restaurant recommendations.</p>
+
+                    <h3>Key Features</h3>
+                    <ul class="features-list">
+                        <li><strong>🤖 AI-Powered Recommendations:</strong> Advanced machine learning algorithms that learn your taste preferences over time</li>
+                        <li><strong>📍 Smart Location Awareness:</strong> Intelligent proximity-based suggestions with real-time availability</li>
+                        <li><strong>🍽️ Personalized Cuisine Matching:</strong> Tailored suggestions based on your dietary preferences and past choices</li>
+                        <li><strong>💰 Budget-Friendly Options:</strong> Smart filtering by price range and value-for-money ratings</li>
+                        <li><strong>⭐ Quality Rating System:</strong> Comprehensive rating system combining user reviews, health inspections, and AI analysis</li>
+                        <li><strong>📸 Visual Menu Exploration:</strong> Browse restaurant menus with high-quality food images and descriptions</li>
+                        <li><strong>🚀 One-Tap Reservations:</strong> Instant booking integration with popular reservation platforms</li>
+                        <li><strong>🌿 Health & Dietary Filters:</strong> Special filters for vegan, gluten-free, keto, and other dietary needs</li>
+                    </ul>
+
+                    <h3>Technical Highlights</h3>
+                    <ul class="tech-highlights">
+                        <li>Built with SwiftUI for iOS with seamless performance</li>
+                        <li>TensorFlow Lite for on-device AI processing</li>
+                        <li>Core ML integration for personalized recommendations</li>
+                        <li>Real-time data synchronization with Firebase</li>
+                        <li>Advanced image recognition for menu analysis</li>
+                        <li>Location services with MapKit integration</li>
+                        <li>Secure authentication and user data protection</li>
+                    </ul>
+
+                    <div class="app-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">4.8/5</div>
+                            <div class="stat-label">App Store Rating</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100K+</div>
+                            <div class="stat-label">Downloads</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50K+</div>
+                            <div class="stat-label">Restaurants Listed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="https://apps.apple.com/us/app/greenbites/id6755367981" class="modal-download-btn" target="_blank">🍎 Download on App Store</a>
+                <a href="#" class="modal-learn-more">Visit Website →</a>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <p>&copy; 2025 Teja Mathukumalli - Tech Innovator & Hardware Engineer. All rights reserved.</p>
         <p style="margin-top: 1rem; font-size: 0.9rem;">Built with innovation and curiosity</p>
     </footer>
-    
+
     <script src="script.js"></script>
 </body>
 </html>

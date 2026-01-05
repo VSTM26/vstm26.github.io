@@ -1,0 +1,3 @@
+- [x] Examine current code to find GitHub link implementation
+- [x] Update GitHub link to point to https://github.com/BixbySpartanHub/BixbySpartanHub.github.io
+- [x] Test the changes to ensure the link works correctly

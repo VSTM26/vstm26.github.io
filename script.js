@@ -114,131 +114,170 @@ navLinks.addEventListener('click', () => {
     hamburger.classList.toggle('active');
 });
 
-// ALL MODAL FUNCTIONALITY - Consolidated
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded, initializing modal functionality...');
-    
-    // GREENBITES MODAL ELEMENTS
-    const greenbitesLearnBtn = document.getElementById('greenbites-learn-btn');
-    const greenbitesModal = document.getElementById('greenbites-modal');
-    const greenbitesClose = greenbitesModal?.querySelector('.close');
-    
-    // ABOUT SECTION MODAL ELEMENTS
-    const learnMoreBtn = document.getElementById('learnMoreBtn');
-    const learnMoreModal = document.getElementById('learnMoreModal');
-    const learnMoreClose = document.getElementById('closeModal');
-    
-    // Debug all elements
-    console.log('=== GREENBITES MODAL ===');
-    console.log('Button:', greenbitesLearnBtn);
-    console.log('Modal:', greenbitesModal);
-    console.log('Close:', greenbitesClose);
-    
-    console.log('=== ABOUT MODAL ===');
-    console.log('Button:', learnMoreBtn);
-    console.log('Modal:', learnMoreModal);
-    console.log('Close:', learnMoreClose);
-    
-    // GREENBITES MODAL FUNCTIONALITY
-    if (greenbitesLearnBtn && greenbitesModal) {
-        console.log('Setting up Greenbites modal...');
-        
-        // Ensure modal starts hidden
-        greenbitesModal.style.display = 'none';
-        
-        greenbitesLearnBtn.addEventListener('click', (e) => {
+function setupModal(modalId, buttonId, closeSelector) {
+    const modal = document.getElementById(modalId);
+    const button = document.getElementById(buttonId);
+    const closeBtn = modal?.querySelector(closeSelector);
+
+    if (!modal || !button) return;
+
+    // Ensure modal starts hidden
+    modal.style.display = 'none';
+
+    // Open modal function
+    const openModal = (e) => {
+        e?.preventDefault();
+        e?.stopPropagation();
+
+        modal.style.display = 'flex';
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        document.body.style.overscrollBehavior = 'none';
+
+        // Focus management for accessibility
+        modal.setAttribute('aria-hidden', 'false');
+        closeBtn?.focus();
+    };
+
+    // Close modal function
+    const closeModal = (e) => {
+        e?.preventDefault();
+
+        modal.style.display = 'none';
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+        document.body.style.overscrollBehavior = 'auto';
+
+        modal.setAttribute('aria-hidden', 'true');
+    };
+
+    // Button click to open
+    button.addEventListener('click', openModal);
+
+    // Close button
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+        closeBtn.addEventListener('touchend', (e) => {
             e.preventDefault();
-            e.stopPropagation();
-            console.log('🎯 Greenbites button clicked!');
-            console.log('Current modal display:', greenbitesModal.style.display);
-            
-            // Force modal to show
-            greenbitesModal.style.display = 'flex';
-            greenbitesModal.style.visibility = 'visible';
-            greenbitesModal.style.zIndex = '9999';
-            document.body.style.overflow = 'hidden';
-            
-            console.log('✅ Modal display set to:', greenbitesModal.style.display);
-            console.log('✅ Modal should now be visible');
-        });
-        
-        // Close functionality
-        if (greenbitesClose) {
-            greenbitesClose.addEventListener('click', (e) => {
-                e.preventDefault();
-                console.log('❌ Greenbites close clicked');
-                greenbitesModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
-        }
-        
-        // Click outside to close
-        greenbitesModal.addEventListener('click', (e) => {
-            if (e.target === greenbitesModal) {
-                console.log('❌ Clicked outside Greenbites modal');
-                greenbitesModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
+            closeModal();
         });
     }
-    
-    // ABOUT SECTION MODAL FUNCTIONALITY
-    if (learnMoreBtn && learnMoreModal) {
-        console.log('Setting up About modal...');
-        
-        // Ensure modal starts hidden
-        learnMoreModal.style.display = 'none';
-        
-        learnMoreBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            console.log('🎯 About button clicked!');
-            
-            // Force modal to show
-            learnMoreModal.style.display = 'flex';
-            learnMoreModal.classList.add('show');
-            document.body.style.overflow = 'hidden';
-            
-            console.log('✅ About modal displayed:', learnMoreModal.style.display);
-        });
-        
-        // Close functionality
-        if (learnMoreClose) {
-            learnMoreClose.addEventListener('click', (e) => {
-                e.preventDefault();
-                console.log('❌ About close clicked');
-                learnMoreModal.style.display = 'none';
-                learnMoreModal.classList.remove('show');
-                document.body.style.overflow = 'auto';
-            });
-        }
-        
-        // Click outside to close
-        learnMoreModal.addEventListener('click', (e) => {
-            if (e.target === learnMoreModal) {
-                console.log('❌ Clicked outside About modal');
-                learnMoreModal.style.display = 'none';
-                learnMoreModal.classList.remove('show');
-                document.body.style.overflow = 'auto';
-            }
-        });
-    }
-    
-    // ESCAPE KEY HANDLER
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            if (greenbitesModal && greenbitesModal.style.display === 'flex') {
-                console.log('❌ Escape pressed - closing Greenbites');
-                greenbitesModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-            if (learnMoreModal && learnMoreModal.classList.contains('show')) {
-                console.log('❌ Escape pressed - closing About');
-                learnMoreModal.style.display = 'none';
-                learnMoreModal.classList.remove('show');
-                document.body.style.overflow = 'auto';
-            }
+
+    // Click outside to close (but not on modal content)
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
         }
     });
-    
+
+    // Touch outside to close on mobile
+    modal.addEventListener('touchend', (e) => {
+        if (e.target === modal) {
+            e.preventDefault();
+            closeModal();
+        }
+    });
+
+    // Prevent modal content clicks from closing modal
+    const modalContent = modal.querySelector('.modal-content');
+    if (modalContent) {
+        modalContent.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+        modalContent.addEventListener('touchend', (e) => {
+            e.stopPropagation();
+        });
+    }
+
+    return { openModal, closeModal };
+}
+
+// Initialize modals when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, initializing modal functionality...');
+
+    // Setup Greenbites modal
+    setupModal('greenbites-modal', 'greenbites-learn-btn', '.close');
+
+    // Setup About modal
+    setupModal('learnMoreModal', 'learnMoreBtn', '#closeModal');
+
+    // Global ESC key handler
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const openModals = document.querySelectorAll('.modal.show, .modal[style*="display: flex"]');
+            openModals.forEach(modal => {
+                modal.style.display = 'none';
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+                document.body.style.overscrollBehavior = 'auto';
+                modal.setAttribute('aria-hidden', 'true');
+            });
+        }
+    });
+
+    // Handle viewport changes (orientation changes, etc.)
+    window.addEventListener('resize', () => {
+        const openModals = document.querySelectorAll('.modal.show, .modal[style*="display: flex"]');
+        openModals.forEach(modal => {
+            // Force reflow to handle viewport changes
+            modal.style.display = 'flex';
+        });
+    });
+
     console.log('🎉 Modal functionality initialized!');
+});
+
+// Coming Soon Popup Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Initializing coming soon popup functionality...');
+
+    const popupButtons = document.querySelectorAll('[data-popup="coming-soon"]');
+    const popup = document.getElementById('comingSoonPopup');
+    const popupText = popup ? popup.querySelector('span') : null;
+
+    console.log('Found popup buttons:', popupButtons.length);
+    console.log('Found popup element:', popup);
+
+    if (popupButtons.length > 0 && popup && popupText) {
+        popupButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Find the Peltier card (the parent project card)
+                const peltierCard = button.closest('.project-card');
+
+                if (peltierCard) {
+                    console.log('🎯 Coming soon button clicked on Peltier card!');
+
+                    // Position the popup over the Peltier card
+                    peltierCard.style.position = 'relative';
+                    peltierCard.appendChild(popup);
+
+                    // Always show "Coming Soon"
+                    popupText.textContent = 'Coming Soon';
+
+                    // Show the popup
+                    popup.style.display = 'block';
+                    popup.style.animation = 'notificationSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+
+                    console.log('✅ Popup shown over Peltier card with text: Coming Soon');
+
+                    // Hide the popup after 10 seconds with fade out animation
+                    setTimeout(() => {
+                        popup.style.animation = 'notificationFadeOut 0.3s ease';
+                        setTimeout(() => {
+                            popup.style.display = 'none';
+                            console.log('⏰ Popup hidden after 10 seconds');
+                        }, 250); // Wait for fade out animation to complete
+                    }, 10000);
+                }
+            });
+        });
+
+        console.log('🎉 Coming soon popup functionality initialized!');
+    } else {
+        console.log('⚠️ No popup buttons or popup element found');
+    }
 });

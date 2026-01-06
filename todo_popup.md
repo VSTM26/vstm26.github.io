@@ -1,0 +1,4 @@
+- [x] Remove static "Coming Soon" text from HTML
+- [x] Add JavaScript functionality for popup on button click
+- [x] Style the popup to appear above buttons and disappear after 10 seconds
+- [x] Test the popup functionality

@@ -1,0 +1,2 @@
+- [x] Find Peltier Module Electricity Generator project section
+- [x] Add "coming soon" text under Writeup and Photos buttons

@@ -120,42 +120,47 @@
         </section>
         
         <!-- LEARN MORE MODAL -->
-        <div class="modal" id="learnMoreModal">
+        <div class="modal" id="learnMoreModal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
             <div class="modal-content">
-                <button class="modal-close" id="closeModal">&times;</button>
-                
+                <button class="modal-close" id="closeModal" aria-label="Close modal">&times;</button>
+
                 <div class="modal-header">
-                    <h2>Discover My Journey</h2>
+                    <h2 id="modal-title">Discover My Journey</h2>
+                    <p class="modal-subtitle">Tech innovator bridging AI, software, and hardware</p>
                 </div>
-                
+
                 <div class="modal-body">
                     <div class="modal-description">
-                        <h3>Who I Am</h3>
-                        <p>I'm Teja Mathukumalli, a tech innovator and builder with a passion for creating solutions that bridge the gap between artificial intelligence, software engineering, and hardware design. My career is driven by the belief that the most impactful innovations come from hands-on experimentation and relentless curiosity.</p>
-                        
-                        <h3>My Philosophy</h3>
-                        <p>I don't just theorize about technology—I build it. Every project in my portfolio represents countless hours of learning, testing, and refining. I believe that great engineering doesn't require unlimited resources; it requires vision, persistence, and a willingness to fail fast and iterate.</p>
-                        
-                        <h3>What I Bring to the Table</h3>
-                        <ul>
-                            <li><strong>Full-Stack Engineering:</strong> From circuit design to cloud architecture, I understand the complete picture</li>
-                            <li><strong>AI & Machine Learning:</strong> Practical implementation of ML models, computer vision, and intelligent automation</li>
-                            <li><strong>Hardware Expertise:</strong> Thermal systems, IoT devices, sensor integration, and embedded systems</li>
-                            <li><strong>Innovation Mindset:</strong> I thrive on solving complex problems with creative, efficient solutions</li>
-                            <li><strong>Cross-Disciplinary Knowledge:</strong> Materials science, chemistry, software architecture, and business acumen</li>
-                        </ul>
-                        
-                        <h3>Beyond the Code</h3>
-                        <p>I'm passionate about community building and knowledge sharing. I've founded academic clubs, mentored students, and actively contribute to the tech community. I believe in lifting others up while pushing myself to new heights.</p>
+                        <div class="description-section">
+                            <h3>👋 Who I Am</h3>
+                            <p>I'm Teja Mathukumalli, a passionate tech innovator who builds practical solutions that actually work. I specialize in bridging the gap between artificial intelligence, software engineering, and hardware design.</p>
+                        </div>
+
+                        <div class="description-section">
+                            <h3>🚀 My Philosophy</h3>
+                            <p>I don't just theorize about technology—I build it. Every project represents countless hours of experimentation, learning, and iteration. Great engineering requires curiosity, persistence, and hands-on problem-solving.</p>
+                        </div>
+
+                        <div class="description-section">
+                            <h3>🛠️ What I Bring to the Table</h3>
+                            <ul class="skills-list">
+                                <li><strong>Full-Stack Engineering</strong> - Circuit design to cloud architecture</li>
+                                <li><strong>AI & Machine Learning</strong> - ML models, computer vision, automation</li>
+                                <li><strong>Hardware Expertise</strong> - Thermal systems, IoT, embedded systems</li>
+                                <li><strong>Innovation Mindset</strong> - Creative solutions for complex problems</li>
+                                <li><strong>Cross-Disciplinary Knowledge</strong> - Materials science to business acumen</li>
+                            </ul>
+                        </div>
+
+                        <div class="description-section">
+                            <h3>🌟 Beyond the Code</h3>
+                            <p>I'm passionate about community building and knowledge sharing. I've founded academic clubs, mentored students, and actively contribute to the tech community through leadership and volunteering initiatives.</p>
+                        </div>
                     </div>
-                    
+
                     <div class="modal-gallery">
-                        <h3>Featured Work</h3>
+                        <h3>Featured Work Highlights</h3>
                         <div class="gallery-grid">
-                            <div class="gallery-item">
-                                <img src="TejaMathukumalliPictureLinkedIn.jpg" alt="Professional Photo">
-                                <p>Teja Mathukumalli</p>
-                            </div>
                             <div class="gallery-item">
                                 <div class="gallery-placeholder">🔬</div>
                                 <p>Research & Innovation</p>
@@ -176,10 +181,14 @@
                                 <div class="gallery-placeholder">🏆</div>
                                 <p>Achievements</p>
                             </div>
+                            <div class="gallery-item">
+                                <div class="gallery-placeholder">👥</div>
+                                <p>Leadership & Community</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="modal-footer">
                     <a href="#projects" class="modal-button primary">View My Projects</a>
                     <a href="#contact" class="modal-button secondary">Get in Touch</a>
@@ -280,8 +289,8 @@
                         <span class="tech-tag">Prototyping</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">Writeup</a>
-                        <a href="#" class="project-link">Photos</a>
+                        <a href="#" class="project-link" data-popup="coming-soon">Writeup</a>
+                        <a href="#" class="project-link" data-popup="coming-soon">Photos</a>
                     </div>
                 </div>
 
@@ -300,10 +309,14 @@
                         <span class="tech-tag">System Optimization</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">GitHub</a>
-                        <a href="#" class="project-link">Blog Post</a>
+                        <a href="#" class="project-link" data-popup="coming-soon">Blog Post</a>
                     </div>
                 </div>
+            </div>
+
+            <!-- Coming Soon Popup -->
+            <div class="coming-soon-popup" id="comingSoonPopup" style="display: none;">
+                <span>Peltier Module Electricity Generator</span>
             </div>
         </section>
         
@@ -524,7 +537,7 @@
             <p>I'm always interested in collaborating on exciting projects, discussing innovative ideas, or exploring new possibilities in tech.</p>
             
             <div class="contact-options">
-                <a href="#" class="contact-button">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mvsivateja@proton.me" target="_blank" class="contact-button">
                     <span class="contact-icon">✉️</span>
                     <div>
                         <h4>Email</h4>
@@ -532,7 +545,7 @@
                     </div>
                 </a>
 
-                <a href="https://github.com" target="_blank" class="contact-button">
+                <a href="https://github.com/VSTM26" target="_blank" class="contact-button">
                     <span class="contact-icon">💻</span>
                     <div>
                         <h4>GitHub</h4>
@@ -540,7 +553,7 @@
                     </div>
                 </a>
 
-                <a href="https://www.linkedin.com/in/teja-mathukumalli" target="_blank" class="contact-button">
+                <a href="https://www.linkedin.com/in/teja-mathukumalli/" target="_blank" class="contact-button">
                     <span class="contact-icon">🔗</span>
                     <div>
                         <h4>LinkedIn</h4>

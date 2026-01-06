@@ -1,0 +1,2 @@
+- [x] Adjust Writeup and Photos buttons to align with other project buttons on same level
+- [x] Keep "Coming Soon" text positioned below the buttons

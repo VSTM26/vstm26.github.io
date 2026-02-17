@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "Teja Mathukumalli's personal portfolio website",
   "scripts": {
-    "commit": "git add . && git commit -m \"Auto-commit: $(date +'%Y-%m-%d %H:%M:%S')\"",
-    "push": "npm run commit && git push origin master",
+    "commit": "git add . && (git diff --cached --quiet || git commit -m \"Auto-commit\")",
+    "push": "npm run commit && git push origin main",
     "deploy": "npm run push"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/teja.github.io.git"
+    "url": "git+https://github.com/VSTM26/vstm26.github.io.git"
   },
   "keywords": [
     "portfolio",

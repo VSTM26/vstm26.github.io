@@ -63,6 +63,33 @@ header {
     font-weight: 500;
 }
 
+.header-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 999px;
+    background: #2f6bff;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
+    box-shadow: 0 10px 24px rgba(47, 107, 255, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.header-cta:hover {
+    background: #1f57e0;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(47, 107, 255, 0.45);
+}
+
+.header-cta:active {
+    transform: translateY(0);
+}
+
 .header-down-arrow {
     position: absolute;
     bottom: 2rem;
@@ -208,8 +235,8 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateY(-100%);
-    opacity: 0;
+    transform: translateY(0);
+    opacity: 1;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -493,8 +520,8 @@ section p {
 }
 
 .project-card:hover {
-    transform: translateY(-12px) rotateY(5deg);
-    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(102, 126, 234, 0.25);
     border-color: #667eea;
 }
 
@@ -694,6 +721,7 @@ section p {
 .badge:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
 
 /* SOCIAL PROOF SECTION */
 .social-proof-grid {
@@ -1028,6 +1056,9 @@ section p {
     justify-content: center;
     border-radius: 50%;
     background: rgba(50, 50, 50, 0.5);
+    border: none;
+    padding: 0;
+    appearance: none;
 }
 
 .close:hover {
@@ -1301,7 +1332,6 @@ section p {
     font-weight: 500;
     margin: 1rem 0;
 }
-}
 
 /* TIMELINE */
 .timeline {
@@ -1529,6 +1559,25 @@ section p {
 
 .footer a:hover {
     text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .swirl,
+    .svg-path-1,
+    .svg-path-2,
+    .down-arrow,
+    .header-down-arrow {
+        animation: none !important;
+    }
 }
 
 /* RESPONSIVE DESIGN */
